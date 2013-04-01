@@ -61,7 +61,7 @@
 		<div id="branding">
 			<div id="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ) ?>" rel="home">
-					<img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" title="SaaS Solutions Logo" alt="SaaS Solutions Logo" />
+					<img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" title="Logo" alt="Logo" />
 				</a>
 			</div>
 			<p id="site-description"><?php bloginfo( 'description' ) ?></p>
