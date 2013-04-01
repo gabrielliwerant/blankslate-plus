@@ -1,0 +1,168 @@
+/*************************** RESET ***************************/
+
+@import "reset.less";
+
+/*************************** FONTS ***************************/
+
+/* @font-face {
+	font-family: 'petitalightregular';
+    src: url('fonts/petitalight-webfont.eot');
+    src: url('fonts/petitalight-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/petitalight-webfont.svg#petitalightregular') format('svg'),
+         url('fonts/petitalight-webfont.woff') format('woff'),
+         url('fonts/petitalight-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+/* @import "../fontawesome/less/font-awesome.less"; */
+
+/*************************** MIXINS ***************************/
+
+.rounded-all-corners(@radius) {
+	-moz-border-radius:		@radius;
+	-webkit-border-radius:	@radius;
+	border-radius:			@radius;
+}
+.rounded-top-corners(@radius) {
+	-moz-border-radius:		@radius @radius 0 0;
+	-webkit-border-radius:	@radius @radius 0 0;
+	border-radius:			@radius @radius 0 0;
+}
+.rounded-bottom-corners(@radius) {
+	-moz-border-radius:		0 0 @radius @radius;
+	-webkit-border-radius:	0 0 @radius @radius;
+	border-radius:			0 0 @radius @radius;
+}
+.rounded-left-corners(@radius) {
+	-moz-border-radius:		@radius 0 0 @radius;
+	-webkit-border-radius:	@radius 0 0 @radius;
+	border-radius:			@radius 0 0 @radius;
+}
+.rounded-right-corners(@radius) {
+	-moz-border-radius:		0 @radius @radius 0;
+	-webkit-border-radius:	0 @radius @radius 0;
+	border-radius:			0 @radius @radius 0;
+}
+.css_clear {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.text-shadow(@x-offset, @y-offset, @color) {
+	text-shadow: @x-offset @y-offset 0 @color;
+ }
+.gradient(@start-color, @end-color) {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@start-color), to(@end-color)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(@start-color, @end-color); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(@start-color, @end-color); /* FF3.6 */
+	background-image:     -ms-linear-gradient(@start-color, @end-color); /* IE10 */
+	background-image:      -o-linear-gradient(@start-color, @end-color); /* Opera 11.10+ */
+	background-image:         linear-gradient(@start-color, @end-color);
+}
+.drop-and-inner-shadow(
+	@offset-drop-x, 
+	@offset-drop-y, 
+	@drop-radius, 
+	@drop-color, 
+	@offset-inset-x, 
+	@offset-inset-y, 
+	@inset-radius, 
+	@inset-color
+) {
+   -moz-box-shadow:		@offset-drop-x @offset-drop-y @drop-radius @drop-color, inset @offset-inset-x @offset-inset-y @inset-radius @inset-color;
+   -webkit-box-shadow:	@offset-drop-x @offset-drop-y @drop-radius @drop-color, inset @offset-inset-x @offset-inset-y @inset-radius @inset-color;
+   box-shadow:			@offset-drop-x @offset-drop-y @drop-radius @drop-color, inset @offset-inset-x @offset-inset-y @inset-radius @inset-color;
+}
+.box_sizing {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.button-main {
+	font-family: allerbold, arial, sans-serif;
+	font-size: 1.35em;
+	.rounded-all-corners(5px);
+	text-decoration: none;
+	padding: 0.75em 0;
+	.drop-and-inner-shadow(0, 2px, 4px, #555555, 0, 1px, 1px, #ffffff);
+	display: block;
+	color: #333333;
+	/* width: 66%; */
+	margin: auto;
+	text-align: center;
+}
+.button-specific(@text-shadow-color, @background-color, @gradient-start, @gradient-end, @border-color) {
+	.text-shadow(0, 1px, @text-shadow-color);
+	background-color: @background-color;
+	.gradient(@gradient-start, @gradient-end);
+	border: 2px solid @border-color;
+}
+.sub-header {
+	font-family: allerbold, arial, sans-serif;
+	font-size: 1.5em;
+	color: #333333;
+	text-align: center;
+	line-height: 1.25em;
+}
+.button-reset-styles {
+	font-family: aller_lightregular, arial, sans-serif;
+	font-size: 1em;
+	.rounded-all-corners(0);
+	text-decoration: underline;
+	padding: 0;
+	.drop-and-inner-shadow(0, 0, 0, #ffffff, 0, 0, 0, #ffffff);
+	display: inline;
+	width: auto;
+	margin: 0;
+	text-align: left;
+	.text-shadow(0, 0, #ffffff);
+	background-color: #f6f6f6;
+	background-image: none;
+	border: none;
+}
+
+/*************************** STYLES ***************************/
+
+html {
+
+}
+
+body {
+
+}
+
+body,
+a {
+
+}
+
+a:hover {
+
+}
+
+/*************************** MAIN IMPORTS ***************************/
+
+@import "header.less";
+@import "home.less";
+@import "blog.less";
+@import "footer.less";
+
+/* @media only screen and (min-width: 650px) {
+	@import "650-and-up.less";
+} */
+ 
+@media only screen and (min-width: 850px) {
+	@import "850-and-up.less";
+}
+
+@media only screen and (min-width: 980px) {
+	@import "980-and-up.less";
+}
+
+/* @media only screen and (min-width: 1100px) {
+	@import "1100-and-up.less";
+} */
