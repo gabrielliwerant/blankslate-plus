@@ -11,6 +11,8 @@
 	if ($url_arr[0] === 'localhost')
 	{
 		define('IS_DEVELOPMENT', true);
+		define('MAIN_DEV_PATH', '');
+		define('LESS_PATH', '');
 	}
 	else
 	{
@@ -43,7 +45,7 @@
 
 <?php if (IS_DEVELOPMENT)
 	{
-		include 'C:\wamp\www\mysalesforcecrm.com\wp-content\themes\mysalesforcecrm\lessphp\lessc.inc.php'; lessc::ccompile('C:\wamp\www\mysalesforcecrm.com\wp-content\themes\mysalesforcecrm\less\all.less', 'C:\wamp\www\mysalesforcecrm.com\wp-content\themes\mysalesforcecrm\all.css', true);
+		include MAIN_DEV_PATH . LESS_PATH; lessc::ccompile(MAIN_DEV_PATH . '\less\all.less', MAIN_DEV_PATH . '\all.css', true);
 	} ?>
 
 <body <?php body_class(); ?>>
