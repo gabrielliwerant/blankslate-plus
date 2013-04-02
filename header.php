@@ -12,6 +12,7 @@
 	{
 		define('IS_DEVELOPMENT', true);
 		define('MAIN_DEV_PATH', '');
+		define('USE_LESS', false);
 		define('LESS_PATH', '');
 	}
 	else
@@ -32,20 +33,22 @@
 	<!-- <link rel="stylesheet" type="text/css" href="<?php //echo get_stylesheet_uri(); ?>" /> -->
 	
 	<?php if (IS_DEVELOPMENT) : ?>
-		<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/all.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/all.css" />
 	<?php else: ?>
-		<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/all-min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/all-min.css" />
 	<?php endif; ?>
 	<!--[if gte IE]>
-		<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url'); ?>/ie.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/ie.css" />
 	<![endif]-->
 	
 	<?php wp_head(); ?>
 </head>
 
-<?php if (IS_DEVELOPMENT)
+<?php if (IS_DEVELOPMENT AND USE_LESS)
 	{
-		include MAIN_DEV_PATH . LESS_PATH; lessc::ccompile(MAIN_DEV_PATH . '\less\all.less', MAIN_DEV_PATH . '\all.css', true);
+		include MAIN_DEV_PATH . LESS_PATH; 
+		$lessc = new lessc();
+		$lessc->compileFile(MAIN_DEV_PATH . '\less\all.less', MAIN_DEV_PATH . '\all.css');
 	} ?>
 
 <body <?php body_class(); ?>>
@@ -63,7 +66,7 @@
 		<div id="branding">
 			<div id="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ) ?>" rel="home">
-					<img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" title="Logo" alt="Logo" />
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" title="Logo" alt="Logo" />
 				</a>
 			</div>
 			<p id="site-description"><?php bloginfo( 'description' ) ?></p>

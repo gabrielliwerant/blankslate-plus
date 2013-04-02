@@ -15,13 +15,13 @@
 
 		<?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'blankslate' ) . '&after=</div>') ?>
 
-		<?php edit_post_link( __( 'Edit', 'blankslate' ), '<div class="edit-link">', '</div>' ) ?>
+		<?php //edit_post_link( __( 'Edit', 'blankslate' ), '<div class="edit-link">', '</div>' ) ?>
 		</div>
 	</div>
 	
-	<?php comments_template( '', true ); ?>
+	<?php //comments_template( '', true ); ?>
 </article>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>
