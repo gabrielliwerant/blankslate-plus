@@ -78,8 +78,8 @@ function blankslate_img_caption_shortcode_filter($val, $attr, $content = null)
 	. (10 + (int) $width) . 'px">' . do_shortcode( $content ) . '<figcaption ' . $capid 
 	. 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
-add_action( 'widgets_init', 'blankslate_widgets_init' );
 
+add_action( 'widgets_init', 'blankslate_widgets_init' );
 function blankslate_widgets_init()
 {
 	register_sidebar( array (
