@@ -37,7 +37,7 @@
 	<?php else: ?>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/all-min.css" />
 	<?php endif; ?>
-	<!--[if gte IE]>
+	<!--[if gte IE 7]>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/ie.css" />
 	<![endif]-->
 	
