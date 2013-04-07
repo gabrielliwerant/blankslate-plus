@@ -30,6 +30,7 @@
 	
 	<title><?php wp_title(' | ', true, 'right'); ?></title>
 	
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 	<!-- <link rel="stylesheet" type="text/css" href="<?php //echo get_stylesheet_uri(); ?>" /> -->
 	
 	<?php if (IS_DEVELOPMENT) : ?>
